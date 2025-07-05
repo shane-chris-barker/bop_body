@@ -1,7 +1,14 @@
-from bop_common.enums.hardware_type import HardwareType
-from hardware_detection.services.screen_service_starter import ScreenServiceStarter
-from bop_common.interfaces.service_starter_interface import ServiceStarterInterface
+from typing import Dict, Optional
+from bop_common.enums.service_name import ServiceType
 
-SERVICE_STARTERS: dict[HardwareType, ServiceStarterInterface] = {
-    HardwareType.SCREEN: ScreenServiceStarter(),
-}
+class ServiceRegistry:
+    def __init__(self):
+        self._services: Dict[ServiceType, object] = {}
+
+    def register(self, service_type: ServiceType, instance: object) -> None:
+        self._services[service_type] = instance
+
+    def get(self, service_type: ServiceType) -> Optional[object]:
+        return self._services.get(service_type)
+
+SERVICE_REGISTRY = ServiceRegistry()

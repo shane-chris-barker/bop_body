@@ -1,4 +1,5 @@
-from hardware_detection.services.service_registry import SERVICE_STARTERS
+from hardware_detection.services.service_starters import SERVICE_STARTERS
+from hardware_detection.services.service_registry import SERVICE_REGISTRY
 from hardware_detection.services.hardware_config_service import HardwareConfigService
 from bop_common.dtos.service_info_dto import ServiceInfoDTO
 import logging
@@ -18,6 +19,7 @@ def start_enabled_services() -> list[ServiceInfoDTO]:
             try:
                 service_info = starter.start()
                 services.append(service_info)
+                SERVICE_REGISTRY.register(service_info.service, service_info.instance)
                 logger.info(f"{log_prefix} Bop body started the {service_info.service.name} service!")
             except Exception as e:
                 logger.error(f"{log_prefix} Bop body couldn't start a device - {device_type.name} system: {e}")

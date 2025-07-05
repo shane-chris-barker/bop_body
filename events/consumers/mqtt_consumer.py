@@ -4,7 +4,7 @@ from bop_common.dtos.event_dto import EventDTO
 import json
 import paho.mqtt.client as mqtt
 from events.consumers.consumer_interface import ConsumerInterface
-from events.handlers.handler_registry import HandlerRegistry
+from events.handlers.registry.handler_registry import HandlerRegistry
 from events.handlers.event_handler_interface import EventHandlerInterface
 
 class MqttConsumer(ConsumerInterface):

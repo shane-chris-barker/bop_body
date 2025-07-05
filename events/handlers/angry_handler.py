@@ -4,12 +4,12 @@ from bop_common.dtos.event_dto import EventDTO
 from events.handlers.event_handler_interface import EventHandlerInterface
 from screen.screen_updater import ScreenUpdater
 
-class DanceHandler(EventHandlerInterface):
+class AngryHandler(EventHandlerInterface):
     def __init__(self, screen_updater: ScreenUpdater) -> None:
-        self.log_prefix = "[💃 DANCE HANDLER]"
+        self.log_prefix = "[🤬 ANGRY HANDLER]"
         self.screen_updater = screen_updater
 
     def handle(self, dto: EventDTO):
-        logger.info(f"{self.log_prefix} Bop is dancing!")
-        self.screen_updater.display_text("Bop is dancing!")
+        logger.info(f"{self.log_prefix} Bop is ANGRY!!!!!!")
+        self.screen_updater.display_text("Bop is ANGRY!!!!!")
         return
