@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 from bop_common.dtos.event_dto import EventDTO
 from bop_common.enums.event_type import EventType
 from events.handlers.event_handler_interface import EventHandlerInterface
-from events.handlers.handler_registry import HandlerRegistry
+from events.handlers.registry.handler_registry import HandlerRegistry
 
 class DummyHandlerA(EventHandlerInterface):
     def __init__(self):

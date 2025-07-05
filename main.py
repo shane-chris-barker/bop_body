@@ -2,7 +2,7 @@ from logger_config import setup_logging
 import logging
 setup_logging()
 from events.factories.consumer_factory import get_consumer
-from events.handlers.registry_setup import register_handlers
+from events.handlers.registry.registry_setup import register_handlers
 from hardware_detection.helpers.services_startup_helper import start_enabled_services
 import time
 logger = logging.getLogger(__name__)
