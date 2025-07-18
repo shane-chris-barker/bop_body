@@ -1,4 +1,4 @@
-from hardware_detection.services.service_starters import SERVICE_STARTERS
+from hardware_detection.starters.service_starters import SERVICE_STARTERS
 from hardware_detection.services.service_registry import SERVICE_REGISTRY
 from hardware_detection.services.hardware_config_service import HardwareConfigService
 from bop_common.dtos.service_info_dto import ServiceInfoDTO
