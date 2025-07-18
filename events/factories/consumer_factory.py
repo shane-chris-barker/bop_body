@@ -3,7 +3,7 @@ logger = logging.getLogger(__name__)
 from config import get_config
 from events.consumers.mqtt_consumer import MqttConsumer
 
-def get_consumer():
+def get_consumer() -> MqttConsumer|None:
     config = get_config()
     log_prefix = "[📢 CONSUMER FACTORY]"
     logger.info(f"{log_prefix} is trying to start the {config.COMM_TYPE} consumer...")

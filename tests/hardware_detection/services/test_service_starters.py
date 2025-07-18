@@ -1,6 +1,6 @@
 from bop_common.enums.hardware_type import HardwareType
-from hardware_detection.services.service_starters import SERVICE_STARTERS
-from hardware_detection.services.screen_service_starter import ScreenServiceStarter
+from hardware_detection.starters.service_starters import SERVICE_STARTERS
+from hardware_detection.starters.screen_service_starter import ScreenServiceStarter
 
 def test_screen_service_is_registered():
     assert HardwareType.SCREEN in SERVICE_STARTERS
