@@ -21,7 +21,10 @@ class TestMqttConsumer:
 
     def test_on_message_valid_payload_triggers_consume(self):
         consumer = MqttConsumer()
-        data = {"event_type":EventType.BOP_DANCE.value}
+        data = {
+            "event_type":EventType.BOP_DANCE.value,
+            "payload": {}
+        }
         mock_message = MagicMock()
         mock_message.payload = json.dumps(data).encode("utf-8")
 
